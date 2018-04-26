@@ -13,8 +13,6 @@ Bulma has excellent `content markup <https://bulma.io/documentation/elements/con
 
 
 
-
-
 Installing
 ----------
 
@@ -32,3 +30,13 @@ Configuring
 
    html_theme = "bulma"
    html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
+
+
+Contributing
+------------
+
+
+.. code:: bash
+
+   pipenv install --dev
+   make watch
