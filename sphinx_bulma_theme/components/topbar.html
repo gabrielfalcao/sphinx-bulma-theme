@@ -1,0 +1,35 @@
+<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ pathto(master_doc) }}">
+      <strong>{{ project }}</strong>
+      {% if display_version %}
+      {%- set nav_version = version %}
+      {% if current_version %}
+      {%- set nav_version = current_version %}
+      {% endif %}
+      {% if nav_version %}
+      {{ nav_version }}
+      {% endif %}
+      {% endif %}
+    </a>
+    <div class="navbar-burger burger" data-target="topbar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="topbar" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="{{ pathto(master_doc) }}">
+        Table of Contents
+      </a>
+
+      <div class="navbar-item">
+        <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+          <input class="input" type="text" name="q" placeholder="{{ _('Search docs') }}" />
+          <input class="input" type="hidden" name="check_keywords" value="yes" />
+          <input class="input" type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </div>
+</nav>

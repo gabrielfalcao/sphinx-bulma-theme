@@ -1,0 +1,26 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+"pathlib2" = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+
+
+[dev-packages]
+
+tox = "*"
+nose = "*"
+rednose = "*"
+sure = "*"
+mock = "*"
+
+
+[requires]
+
+python_version = "3.6"

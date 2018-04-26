@@ -1,0 +1,28 @@
+<aside class="menu">
+    <ul class="menu-list">
+        {% block menu %}
+            {#
+            The singlehtml builder doesn't handle this toctree call when the
+            toctree is empty. Skip building this for now.
+            #}
+            {% if 'singlehtml' not in builder %}
+                {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
+            {% endif %}
+            {% if global_toc %}
+                {{ global_toc }}
+            {% else %}
+                <!-- Local TOC -->
+                <div class="local-toc">{{ toc }}</div>
+            {% endif %}
+        {% endblock %}
+    </ul>
+    {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+    <ul class="menu-list">
+        <li>
+            {% block mobile_nav %}
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+            {% endblock %}
+        </li>
+    </ul>
+</aside>
