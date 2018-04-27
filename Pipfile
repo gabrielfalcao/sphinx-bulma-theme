@@ -19,6 +19,8 @@ nose = "*"
 rednose = "*"
 sure = "*"
 mock = "*"
+twine = "*"
+coverage = "*"
 
 
 [requires]

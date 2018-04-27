@@ -9,3 +9,6 @@ __pycache__
 *#*
 Pipfile.lock
 package-lock.json
+
+/dist
+/build

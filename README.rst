@@ -3,6 +3,7 @@ Sphinx Bulma Theme
 
 A Sphinx theme based on the `RTD theme <https://github.com/rtfd/sphinx_rtd_theme>`_, built on top of `bulma.io <https://bulma.io>`_.
 
+`Demo <https://sphinx-bulma-theme.readthedocs.io/>`_
 
 Motivation
 ----------
