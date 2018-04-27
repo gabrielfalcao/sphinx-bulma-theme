@@ -1,9 +1,10 @@
 Sphinx Bulma Theme
 ==================
 
+.. warning:: This project is a work-in-progress
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    introduction
    showcase
