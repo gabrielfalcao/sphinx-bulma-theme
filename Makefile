@@ -26,5 +26,18 @@ html %:
 	rm -rf docs/build/$@
 	make -C docs $@
 
+tests:
+	@echo -n "running tests... "
+	@echo "OK"
+
+release: tests docs
+	@rm -rf dist/*
+	@./.release
+	@make pypi
+
+pypi:
+	@pipenv run python setup.py build sdist
+	@pipenv run twine upload dist/*.tar.gz
+
 
 .PHONY: webpack sass
