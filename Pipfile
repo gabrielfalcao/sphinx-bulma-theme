@@ -21,6 +21,7 @@ sure = "*"
 mock = "*"
 twine = "*"
 coverage = "*"
+ipdb = "*"
 
 
 [requires]
