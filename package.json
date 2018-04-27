@@ -1,0 +1,24 @@
+{
+  "name": "sphinx-bulma-theme",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react-app": "^3.1.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bulma": "^0.7.0",
+    "css-loader": "^0.28.11",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production NODE_PATH=.:./node_modules:./sphinx_bulma_theme:$NODE_PATH webpack -p",
+    "sass": "node-sass --include-path scss sphinx_bulma_theme/sphinx-bulma.src.sass sphinx_bulma_theme/static/css/sphinx-bulma.css"
+  }
+}

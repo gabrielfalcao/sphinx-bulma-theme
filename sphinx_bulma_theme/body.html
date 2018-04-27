@@ -1,26 +1,27 @@
 {% block extrabody %} {% endblock %}
 {% include "components/topbar.html" %}
-<section class="section">
+<section class="bulma section is-medium">
   {% include "components/breadcrumbs.html" %}
-
-<div class="columns">
-  {# SIDE NAV, TOGGLES ON MOBILE #}
-  <div class="column is-one-fifth">
-  {% include "components/sidebar.html" %}
-  </div>
-  <div class="column">
-    <div class="content" itemscope="itemscope" itemtype="http://schema.org/Article">
-      {%- block content %}
-      {%- block document %}
-      {% block body %}
-      {{ body }}
-      {% endblock %}
-      {% block comments %}{% endblock %}
-      {% endblock %}
-      {% endblock %}
+</section>
+<section class="bulma section">
+  <div class="bulma columns">
+    {# SIDE NAV, TOGGLES ON MOBILE #}
+    <div class="bulma column is-one-fifth">
+      {% include "components/sidebar.html" %}
+    </div>
+    <div class="bulma column">
+      <div class="bulma content" itemscope="itemscope" itemtype="http://schema.org/Article">
+        {%- block content %}
+        {%- block document %}
+        {% block body %}
+        {{ body }}
+        {% endblock %}
+        {% block comments %}{% endblock %}
+        {% endblock %}
+        {% endblock %}
+      </div>
     </div>
   </div>
-</div>
 </section>
 {% if not embedded %}
 
@@ -39,8 +40,10 @@
 {%- endfor %}
 
 {% endif %}
-
 <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+{#
+<script type="text/javascript" src="{{ pathto('_static/js/sphinx-bulma.js', 1) }}"></script>
+#}
 
 
 {# STICKY NAVIGATION #}

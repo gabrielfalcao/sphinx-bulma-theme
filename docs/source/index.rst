@@ -6,7 +6,9 @@ Sphinx Bulma Theme
    :caption: Contents:
 
    introduction
+   showcase
    api
+
 
 
 Indices and tables

@@ -23,9 +23,8 @@
         <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}" />
     {% endif %}
 {% endif %}
-
 <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-<link rel="stylesheet" href="{{ pathto('_static/css/bulma.min.css', 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/sphinx-bulma.css', 1) }}" type="text/css" />
 
 {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />

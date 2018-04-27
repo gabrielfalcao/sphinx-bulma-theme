@@ -26,13 +26,14 @@ needs_sphinx = '1.7.1'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.coverage',
     'sphinx.ext.doctest',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.ifconfig',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
 ]
 html_theme = "bulma"
 html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]

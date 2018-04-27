@@ -10,12 +10,6 @@ Install
    pip install sphinx-bulma-theme
 
 
-.. seealso:: Various message colors available
-.. warning:: Too much fun ahead
-.. tip:: write docs
-.. note:: attention to detail
-
-
 Configure Theme
 ===============
 
