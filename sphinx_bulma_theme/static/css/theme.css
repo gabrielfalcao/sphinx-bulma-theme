@@ -6436,20 +6436,20 @@ label.panel-block {
     display: inline; }
 
 .menu-list {
-  line-height: 1em;
+  line-height: 1;
   padding: 0;
   border: 0; }
   .menu-list li {
     padding: 0;
-    line-height: 1em;
+    line-height: 1;
     border: 0; }
     .menu-list li ul {
       border: 0;
-      line-height: 1em;
+      line-height: 1;
       padding: 0;
       margin: 0 0 0 0.5em; }
       .menu-list li ul li {
-        line-height: 1em;
+        line-height: 1;
         border: 0;
         padding: 0; }
 

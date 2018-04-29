@@ -31,7 +31,7 @@ tests:
 	@echo -n "running tests... "
 	@echo "OK"
 
-release: develop tests html
+release: sass develop html tests
 	@rm -rf dist/*
 	@./.release
 	@make pypi
