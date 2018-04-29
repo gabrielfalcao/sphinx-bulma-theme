@@ -21,7 +21,7 @@ Configuring
    html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
 
    html_theme_options = {
-       'logo_path': 'logo.png',
+       'logo_path': 'logo.png',  # within your _static/ folder
        'admonition_class': 'is-small',
        'analytics_id': None,
        'breadcrumbs_at_top': False,

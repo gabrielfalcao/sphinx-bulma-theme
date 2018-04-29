@@ -1,3 +1,12 @@
-include COPYING *.rst *.txt
-recursive-include . *.rst
-recursive-include . *.txt
+include *.rst
+include *.txt
+include LICENSE
+recursive-include sphinx_bulma_theme *.conf
+recursive-include sphinx_bulma_theme *.css
+recursive-include sphinx_bulma_theme *.eot
+recursive-include sphinx_bulma_theme *.html
+recursive-include sphinx_bulma_theme *.js
+recursive-include sphinx_bulma_theme *.svg
+recursive-include sphinx_bulma_theme *.ttf
+recursive-include sphinx_bulma_theme *.woff
+recursive-include sphinx_bulma_theme *.woff2

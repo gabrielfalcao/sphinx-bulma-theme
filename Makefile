@@ -5,7 +5,7 @@ deps:
 	pipenv install --dev --skip-lock
 
 develop:
-	pipenv run python setup.py develop
+	pipenv run python setup.py install
 
 assets: node_modules/bulma/bulma.sass package-lock.json sass
 
@@ -23,15 +23,15 @@ sass:
 clear:
 	@rm -rf docs/build
 
-html: sass
+html: develop sass
 	@rm -rf docs/build/$@
-	@make -C docs $@
+	@pipenv run make -C docs $@
 
 tests:
 	@echo -n "running tests... "
 	@echo "OK"
 
-release: tests docs
+release: develop tests html
 	@rm -rf dist/*
 	@./.release
 	@make pypi
@@ -41,4 +41,4 @@ pypi:
 	@pipenv run twine upload dist/*.tar.gz
 
 
-.PHONY: webpack sass tests
+.PHONY: webpack sass tests develop
