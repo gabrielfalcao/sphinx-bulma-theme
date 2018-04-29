@@ -7,10 +7,15 @@ Based on https://github.com/rtfd/sphinx_rtd_theme
 """
 from docutils.nodes import warning
 from docutils.nodes import tip
+from docutils.nodes import Admonition  # noqa
+from docutils.nodes import Element  # noqa
+from docutils.nodes import compound  # noqa
+from docutils.nodes import title
 from docutils.nodes import note
+from docutils.nodes import section  # noqa
 from sphinx.addnodes import seealso
-from sphinx.addnodes import toctree
-# from sphinx.addnodes import centered
+from sphinx.addnodes import toctree  # noqa
+from sphinx.addnodes import centered  # noqa
 from six import string_types
 from .fs import module_path
 from .version import version
@@ -35,19 +40,37 @@ def add_classes_to_node(class_names, node):
     return list(map(node.set_class, class_names))
 
 
-def process_admonition_node(node, color):
-    add_classes_to_node(['box', 'message', color], node)
-    for child in node.children:
+def process_admonition_node(node, admonition_type, color, size):
+    add_classes_to_node(['message', size, color], node)
+
+    for child in node.traverse(title):
+        add_classes_to_node('message-header', child)
+
+    for child in node.traverse(admonition_type):
         add_classes_to_node('message-body', child)
+        break
 
 
 def bulmanize_admonition_nodes(app, doctree, fromdocname):
-    # for node in doctree.traverse(toctree):
+    theme_options = app.config.html_theme_options
+    message_size = theme_options.get('admonition_class', '')
+
+    # size = app.env.conf.get('')
+    # nodes = list(filter(lambda n: 'also' in str(n).lower(), doctree.traverse(Element)))
+    # for node in nodes:
+    #     print(node)
     #     import ipdb; ipdb.set_trace()
 
-    for Node, color in admonition_map.items():
+    #     atts = dict(node.attlist())
+    #     names = " ".join(atts.get('names') or [])
+    #     for ad_type, color in admonition_map.items():
+    #         ad_name = ad_type.__name__
+    #         if ad_name in names:
+    #             process_admonition_node(node, ad_type, color)
+
+    for Node, message_color in admonition_map.items():
         for node in doctree.traverse(Node):
-            process_admonition_node(node, color)
+            process_admonition_node(node, Node, message_color, message_size)
 
 
 def handle_page_context(app, pagename, templatename, context, doctree):

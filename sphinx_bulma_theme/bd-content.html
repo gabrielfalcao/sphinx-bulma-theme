@@ -1,0 +1,10 @@
+<div class="bulma content is-small" itemscope="itemscope" itemtype="http://schema.org/Article">
+    {%- block content %}
+        {%- block document %}
+            {% block body %}
+                {{ body }}
+            {% endblock %}
+            {% block comments %}{% endblock %}
+        {% endblock %}
+    {% endblock %}
+</div>

@@ -1,4 +1,49 @@
-<aside class="menu box">
+{% if not theme_sidebar_style %}
+    {% if not theme_sidebar_right %}
+        {% set menu_style = "margin: 22px 0 0 10px" %}
+    {% else %}
+        {% set menu_style = "margin: 22px 10px 0 0" %}
+    {% endif %}
+{% else %}
+    {% set menu_style = theme_sidebar_style %}
+{% endif %}
+{% if not theme_show_topbar %}
+    <aside class="box menu" style="{{ menu_style }}">
+        <ul class="menu-list">
+            {% if theme_logo_path %}
+                <li class="menu-item">
+                    {% block sidebar_theme_logo %}
+                        <img src="{{ pathto('_static/' + theme_logo_path, 1) }}" />
+                    {% endblock %}
+                </li>
+            {% endif  %}
+            <li class="is-title menu-label">
+                <a class="navbar-item {{ theme_sidebar_class }}" href="{{ pathto(master_doc) }}">
+                    <strong>{{ project }}</strong>
+                    {% if display_version %}
+                        {%- set nav_version = version %}
+                        {% if current_version %}
+                            {%- set nav_version = current_version %}
+                        {% endif %}
+                        {% if nav_version %}
+                            {{ nav_version }}
+                        {% endif %}
+                    {% endif %}
+                </a>
+            </li>
+            <li class="menu-item">
+                <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                    <input class="input" type="text" name="q" placeholder="{{ _('Search docs') }}" />
+                    <input class="input" type="hidden" name="check_keywords" value="yes" />
+                    <input class="input" type="hidden" name="area" value="default" />
+                </form>
+            </li>
+        </ul>
+    </aside>
+{% endif %}
+
+<aside class="box menu" style="{{ menu_style }}">
+
 
     <ul class="menu-list">
         {% block menu %}

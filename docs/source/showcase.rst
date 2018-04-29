@@ -8,22 +8,24 @@ Admonitions
 ===========
 
 
-See Also
---------
+In
+---
 
-.. seealso:: Various message colors available
-   test
+.. tip:: write docs
 
-Warning
--------
+
+Many
+~~~~
 
 .. warning:: Too much fun ahead
 
-Tip
-~~~
-.. tip:: write docs
 
-Note
-####
+Levels
+......
+
+.. seealso:: Various message colors available
+
+Deep
+^^^^
 
 .. note:: attention to detail

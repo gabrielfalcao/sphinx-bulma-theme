@@ -37,6 +37,31 @@ extensions = [
 ]
 html_theme = "bulma"
 html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
+html_theme_options = {
+    'logo_path': 'logo.png',
+    'admonition_class': 'is-small',
+    'analytics_id': None,
+    'breadcrumbs_at_top': False,
+    'canonical_url': None,
+    'collapse_navigation': False,
+    'content_margin_left': None,
+    'content_padding_left': None,
+    'content_padding_top': None,
+    'display_version': True,
+    'logo_only': False,
+    'navigation_depth': 4,
+    'prev_next_buttons_location': 'bottom',
+    'show_topbar': False,
+    'sidebar_class': 'has-text-dark',
+    'sidebar_container_class': 'is-one-fifth',
+    'sidebar_right': None,
+    'theme_sidebar_style': None,
+    'topbar_class': 'is-light',
+    'topbar_logo_class': 'image is-32x32',
+}
+
+html_static_path = ['_static']
+pygments_style = 'friendly'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -63,25 +88,6 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'friendly'
-
-
-# -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
-# html_theme_options = {}
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

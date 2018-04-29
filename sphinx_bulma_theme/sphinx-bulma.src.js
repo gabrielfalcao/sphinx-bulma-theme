@@ -1,1 +1,1 @@
-import './sphinx-bulma.src.sass'
+import $ from 'jquery'
