@@ -10,4 +10,4 @@ install:
 
 script:
   - pipenv install --dev --skip-lock
-  - pipenv run make tests html
+  - pipenv run make unit functional html

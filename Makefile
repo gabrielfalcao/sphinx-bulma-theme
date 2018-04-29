@@ -23,7 +23,7 @@ sass:
 clear:
 	@rm -rf docs/build
 
-html: develop sass
+html: develop
 	@rm -rf docs/build/$@
 	@pipenv run make -C docs $@
 
