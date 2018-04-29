@@ -1,1 +1,3 @@
 include COPYING *.rst *.txt
+recursive-include . *.rst
+recursive-include . *.txt
