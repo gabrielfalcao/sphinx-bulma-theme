@@ -1,5 +1,5 @@
 {% if theme_show_topbar %}
-<nav class="navbar {{ theme_topbar_class }}" role="navigation" aria-label="main navigation">
+<nav id="sphinx-bulma-topbar" class="navbar {{ theme_topbar_class }} {% if theme_sticky_navigation %}sticky-topbar{% endif %}" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ pathto(master_doc) }}">
         {% if theme_logo_path %}

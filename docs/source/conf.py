@@ -39,9 +39,8 @@ html_theme = "bulma"
 html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
 html_theme_options = {
     'logo_path': 'logo.png',
-    'admonition_class': 'is-small',
     'analytics_id': None,
-    'breadcrumbs_at_top': False,
+    'breadcrumbs_at_top': True,
     'canonical_url': None,
     'collapse_navigation': False,
     'content_margin_left': None,
@@ -53,11 +52,10 @@ html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'show_topbar': False,
     'sidebar_class': 'has-text-dark',
-    'sidebar_container_class': 'is-one-fifth',
+    'sidebar_container_class': 'is-3',
     'sidebar_right': None,
-    'theme_sidebar_style': None,
-    'topbar_class': 'is-light',
-    'topbar_logo_class': 'image is-32x32',
+    'sidebar_style': None,
+    'sticky_navigation': True,
 }
 
 html_static_path = ['_static']
@@ -162,7 +160,10 @@ texinfo_documents = [
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('http://www.sphinx-doc.org/en/master', None),
+}
 
 # -- Options for todo extension ----------------------------------------------
 

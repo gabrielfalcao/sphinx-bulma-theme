@@ -17,8 +17,6 @@ webpack:
 
 sass:
 	@node-sass --include-path scss sphinx_bulma_theme/sphinx-bulma.src.sass sphinx_bulma_theme/static/css/theme.css
-	@node-sass --include-path scss sphinx_bulma_theme/sphinx-bulma.src.sass sphinx_bulma_theme/static/css/sphinx-bulma.css
-	@node-sass --include-path scss sphinx_bulma_theme/sphinx-bulma.src.sass docs/build/html/static/css/theme.css
 
 clear:
 	@rm -rf docs/build
@@ -40,5 +38,6 @@ pypi:
 	@pipenv run python setup.py build sdist
 	@pipenv run twine upload dist/*.tar.gz
 
+docs: html
 
-.PHONY: webpack sass tests develop
+.PHONY: webpack sass tests develop docs

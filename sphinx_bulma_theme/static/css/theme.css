@@ -1,14 +1,14 @@
+@charset "UTF-8";
+/* Custom Fonts */
 @font-face {
   font-family: "Lato";
-  src: url("../fonts/Lato-Regular.eot?") format("eot"), url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.svg#Lato") format("svg"); }
+  src: url("../fonts/Lato-Regular.eot?") format("eot"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("../fonts/Inconsolata-Regular.eot?") format("eot"), url("../fonts/Inconsolata-Regular.woff2") format("woff2"), url("../fonts/Inconsolata-Regular.woff") format("woff"), url("../fonts/Inconsolata-Regular.ttf") format("truetype"), url("../fonts/Inconsolata-Regular.svg#Inconsolata") format("svg"); }
+  src: url("../fonts/Inconsolata-Regular.eot?") format("eot"), url("../fonts/Inconsolata-Regular.ttf") format("truetype"), url("../fonts/Inconsolata-Regular.svg#Inconsolata") format("svg"); }
 
-/* @include font-face("RobotoSlab", "../fonts/RobotoSlab-Regular"); */
-/* @include font-face("PT Sans", "../fonts/PT_Sans-Web-Regular"); */
-/* @include font-face("Anonymous Pro", "../fonts/AnonymousPro-Regular"); */
+/* Bulma */
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -5028,7 +5028,7 @@ label.panel-block {
   .columns.is-mobile > .column.is-one-quarter {
     flex: none;
     width: 25%; }
-  .columns.is-mobile > .column.is-one-fifth {
+  .columns.is-mobile > .column.is-one-quarter {
     flex: none;
     width: 20%; }
   .columns.is-mobile > .column.is-two-fifths {
@@ -5139,7 +5139,7 @@ label.panel-block {
     .column.is-one-quarter-mobile {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth-mobile {
+    .column.is-one-quarter-mobile {
       flex: none;
       width: 20%; }
     .column.is-two-fifths-mobile {
@@ -5250,7 +5250,7 @@ label.panel-block {
     .column.is-one-quarter, .column.is-one-quarter-tablet {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth, .column.is-one-fifth-tablet {
+    .column.is-one-quarter, .column.is-one-quarter-tablet {
       flex: none;
       width: 20%; }
     .column.is-two-fifths, .column.is-two-fifths-tablet {
@@ -5361,7 +5361,7 @@ label.panel-block {
     .column.is-one-quarter-touch {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth-touch {
+    .column.is-one-quarter-touch {
       flex: none;
       width: 20%; }
     .column.is-two-fifths-touch {
@@ -5472,7 +5472,7 @@ label.panel-block {
     .column.is-one-quarter-desktop {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth-desktop {
+    .column.is-one-quarter-desktop {
       flex: none;
       width: 20%; }
     .column.is-two-fifths-desktop {
@@ -5583,7 +5583,7 @@ label.panel-block {
     .column.is-one-quarter-widescreen {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth-widescreen {
+    .column.is-one-quarter-widescreen {
       flex: none;
       width: 20%; }
     .column.is-two-fifths-widescreen {
@@ -5694,7 +5694,7 @@ label.panel-block {
     .column.is-one-quarter-fullhd {
       flex: none;
       width: 25%; }
-    .column.is-one-fifth-fullhd {
+    .column.is-one-quarter-fullhd {
       flex: none;
       width: 20%; }
     .column.is-two-fifths-fullhd {
@@ -6430,32 +6430,63 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+/* Extend Bulma */
+/* hide all ¶ characters */
 .headerlink {
   display: none; }
   .headerlink:hover {
     display: inline; }
 
-.menu-list {
-  line-height: 1;
-  padding: 0;
-  border: 0; }
-  .menu-list li {
-    padding: 0;
+/* Fix padding for the toctree sidebar wrapper */
+#sphinx-bulma-sidebar-toctree {
+  padding: 0.8rem 0.4rem;
+  /* Adjust sidebar toctree text spacing */ }
+  #sphinx-bulma-sidebar-toctree .menu-list {
     line-height: 1;
-    border: 0; }
-    .menu-list li ul {
-      border: 0;
-      line-height: 1;
+    padding: 0;
+    border: 0;
+    /* Sidebar title positioning and size */ }
+    #sphinx-bulma-sidebar-toctree .menu-list a {
+      padding: 0.5rem; }
+    #sphinx-bulma-sidebar-toctree .menu-list li {
       padding: 0;
-      margin: 0 0 0 0.5em; }
-      .menu-list li ul li {
-        line-height: 1;
+      line-height: 1.5rem;
+      border: 0;
+      border-bottom: 1px solid whitesmoke; }
+      #sphinx-bulma-sidebar-toctree .menu-list li ul {
         border: 0;
-        padding: 0; }
+        line-height: 1rem;
+        padding: 0 0 0 0.5em;
+        margin: 0; }
+        #sphinx-bulma-sidebar-toctree .menu-list li ul li {
+          line-height: 1.5rem;
+          border: 0;
+          padding: 0; }
+    #sphinx-bulma-sidebar-toctree .menu-list .menu-label.is-title {
+      margin: 0;
+      letter-spacing: 0.2em;
+      padding: 0;
+      font-size: 12px;
+      line-height: 0; }
 
+/* Adjust text spacing in toctree page */
+.toctree-wrapper ul {
+  list-style: none; }
+  .toctree-wrapper ul li {
+    line-height: 1.5rem; }
+    .toctree-wrapper ul li ul {
+      list-style: none;
+      margin-top: 0;
+      margin-left: 1rem; }
+      .toctree-wrapper ul li ul li {
+        line-height: 1.5rem; }
+
+/* Set basic padding for page content */
 .sphinx-bulma.column.content {
   padding: 0 0.75rem 0.75rem 0.75rem; }
 
+/* Sphinx uses the .section class at will, this is an effort to make */
+/* it play nice with Bulma's defaults */
 .section:first-child {
   padding-top: 0; }
 
@@ -6466,19 +6497,39 @@ label.panel-block {
   .section .section {
     padding: 0.5rem 0 3rem 0; }
 
+.breadcrumb li {
+  padding: 0 1rem; }
+  .breadcrumb li a {
+    padding: 0; }
+
+/* Fix margin for "See Also", "Note" and any other admonitions */
 .admonition {
-  margin-top: 22px;
-  max-width: 768px; }
+  margin-top: 22px; }
+  .admonition a {
+    text-decoration: none; }
   .admonition p.last {
     padding: 0 4px; }
 
+/* Fix margin of snippet blocks */
 .code.highlight-default pre {
   max-height: none;
   padding-bottom: 22px; }
 
-.menu-label.is-title {
-  margin: 0;
-  letter-spacing: 0.2em;
-  padding: 0;
-  font-size: 12px;
-  line-height: 0; }
+/* Prevent pygments-generated highlighted code to have padding. */
+code {
+  padding: 0; }
+
+/* Prevent underline in <code> links */
+a code {
+  text-decoration: none; }
+
+/* Stickyness of navigation */
+.sticky-topbar {
+  top: 0px;
+  position: -webkit-sticky;
+  position: sticky; }
+
+.sticky-sidebar {
+  top: 32px;
+  position: -webkit-sticky;
+  position: sticky; }

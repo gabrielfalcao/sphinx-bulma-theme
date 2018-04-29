@@ -6,7 +6,7 @@
 
 {% if not theme_content_padding_top %}
     {% if not theme_breadcrumbs_at_top and not show_topbar %}
-        {%- set content_padding_top = '22px' %}
+        {%- set content_padding_top = '32px' %}
     {% else %}
         {%- set content_padding_top = '0px' %}
     {% endif %}
@@ -16,12 +16,22 @@
 
 {% if not theme_content_margin_left %}
     {% if theme_sidebar_right %}
-        {%- set content_margin_left = '44px' %}
+        {%- set content_margin_left = '32px' %}
     {% else %}
-        {%- set content_margin_left = '10px' %}
+        {%- set content_margin_left = '16px' %}
     {% endif %}
 {% else %}
     {%- set content_margin_left = theme_content_margin_left %}
+{% endif %}
+
+{% if not theme_content_padding_left %}
+    {% if theme_sidebar_right %}
+        {%- set content_padding_left = '32px' %}
+    {% else %}
+        {%- set content_padding_left = '16px' %}
+    {% endif %}
+{% else %}
+    {%- set content_padding_left = theme_content_padding_left %}
 {% endif %}
 
 
@@ -29,9 +39,9 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
 
     {% if not theme_sidebar_right %}
-    <div class="bulma column {{ theme_sidebar_container_class }}">
-        {% include "components/sidebar.html" %}
-    </div>
+        <div class="bulma column {{ theme_sidebar_container_class }}">
+            {% include "components/sidebar.html" %}
+        </div>
     {% endif %}
     <div class="sphinx-bulma column content" itemscope="itemscope" itemtype="http://schema.org/Article" style="margin-left: {{ content_margin_left }}; padding-left: {{ content_padding_left }}; padding-top: {{ content_padding_top }};">
         {%- block content %}
@@ -44,9 +54,9 @@
         {% endblock %}
     </div>
     {% if theme_sidebar_right %}
-    <div class="bulma column {{ theme_sidebar_container_class }}">
-        {% include "components/sidebar.html" %}
-    </div>
+        <div class="bulma column {{ theme_sidebar_container_class }}">
+            {% include "components/sidebar.html" %}
+        </div>
     {% endif %}
 
 </main>
@@ -69,21 +79,20 @@
 
 {% endif %}
 <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-<script type="text/javascript" src="{{ pathto('_static/js/sphinx-bulma.js', 1) }}"></script>
-
-{# STICKY NAVIGATION #}
-{% if theme_sticky_navigation %}
-    <script type="text/javascript">
-        jQuery(function () {
-        SphinxRtdTheme.StickyNav.enable();
-        });
-    </script>
-{% endif %}
 <script type="text/javascript">
-    jQuery(function () {
-    jQuery(".admonition-title").addClass('message-header');
-    jQuery(".admonition .last").addClass('message-body');
-    });
+ jQuery(function () {
+   jQuery(".admonition-title").addClass('message-header');
+   jQuery(".admonition .last").addClass('message-body');
+   {% if theme_sticky_navigation and theme_sticky_js %}
+   var sidebar = new StickySidebar('#sphinx-bulma-sidebar', {
+     topSpacing: 32,
+     bottomSpacing: 32,
+     containerSelector: '.sphinx-bulma-theme-main',
+     innerWrapperSelector: '.sphinx-bulma-sidebar-inner'
+   });
+   {% endif %}
+ });
 </script>
+
 
 {%- block footer %} {% endblock %}

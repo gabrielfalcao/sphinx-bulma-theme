@@ -1,74 +1,78 @@
-{% if not theme_sidebar_style %}
-    {% if not theme_sidebar_right %}
-        {% set menu_style = "margin: 22px 0 0 10px" %}
+<div id="sphinx-bulma-sidebar" class="{% if theme_sticky_navigation %}sticky-sidebar{% endif %}">
+    {% if not theme_sidebar_style %}
+        {% if not theme_sidebar_right %}
+            {% set menu_style = "margin: 22px 0 0 10px" %}
+        {% else %}
+            {% set menu_style = "margin: 22px 10px 0 0" %}
+        {% endif %}
     {% else %}
-        {% set menu_style = "margin: 22px 10px 0 0" %}
+        {% set menu_style = theme_sidebar_style %}
     {% endif %}
-{% else %}
-    {% set menu_style = theme_sidebar_style %}
-{% endif %}
-{% if not theme_show_topbar %}
-    <aside class="box menu" style="{{ menu_style }}">
+    {% if not theme_show_topbar %}
+    <aside id="sphinx-bulma-sidebar-project-info" class="box menu" style="{{ menu_style }}">
+            <div class="sphinx-bulma-sidebar-inner">
+                <ul class="menu-list">
+                    {% if theme_logo_path %}
+                        <li class="menu-item">
+                            {% block sidebar_theme_logo %}
+                                <img src="{{ pathto('_static/' + theme_logo_path, 1) }}" />
+                            {% endblock %}
+                        </li>
+                    {% endif  %}
+                    <li class="is-title menu-label">
+                        <a class="navbar-item {{ theme_sidebar_class }}" href="{{ pathto(master_doc) }}">
+                            <strong>{{ project }}</strong>
+                            {% if display_version %}
+                                {%- set nav_version = version %}
+                                {% if current_version %}
+                                    {%- set nav_version = current_version %}
+                                {% endif %}
+                                {% if nav_version %}
+                                    {{ nav_version }}
+                                {% endif %}
+                            {% endif %}
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                            <input class="input" type="text" name="q" placeholder="{{ _('Search docs') }}" />
+                            <input class="input" type="hidden" name="check_keywords" value="yes" />
+                            <input class="input" type="hidden" name="area" value="default" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    {% endif %}
+
+        <aside id="sphinx-bulma-sidebar-toctree" class="box menu" style="{{ menu_style }}">
+
+
         <ul class="menu-list">
-            {% if theme_logo_path %}
-                <li class="menu-item">
-                    {% block sidebar_theme_logo %}
-                        <img src="{{ pathto('_static/' + theme_logo_path, 1) }}" />
-                    {% endblock %}
-                </li>
-            {% endif  %}
-            <li class="is-title menu-label">
-                <a class="navbar-item {{ theme_sidebar_class }}" href="{{ pathto(master_doc) }}">
-                    <strong>{{ project }}</strong>
-                    {% if display_version %}
-                        {%- set nav_version = version %}
-                        {% if current_version %}
-                            {%- set nav_version = current_version %}
-                        {% endif %}
-                        {% if nav_version %}
-                            {{ nav_version }}
-                        {% endif %}
-                    {% endif %}
-                </a>
-            </li>
-            <li class="menu-item">
-                <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                    <input class="input" type="text" name="q" placeholder="{{ _('Search docs') }}" />
-                    <input class="input" type="hidden" name="check_keywords" value="yes" />
-                    <input class="input" type="hidden" name="area" value="default" />
-                </form>
+            {% block menu %}
+                {#
+                The singlehtml builder doesn't handle this toctree call when the
+                toctree is empty. Skip building this for now.
+                #}
+                {% if 'singlehtml' not in builder %}
+                    {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
+                {% endif %}
+                {% if global_toc %}
+                    {{ global_toc }}
+                {% else %}
+                    <!-- Local TOC -->
+                    <div class="local-toc">{{ toc }}</div>
+                {% endif %}
+            {% endblock %}
+        </ul>
+        {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+        <ul class="menu-list">
+            <li>
+                {% block mobile_nav %}
+                    <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                    <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+                {% endblock %}
             </li>
         </ul>
     </aside>
-{% endif %}
-
-<aside class="box menu" style="{{ menu_style }}">
-
-
-    <ul class="menu-list">
-        {% block menu %}
-            {#
-            The singlehtml builder doesn't handle this toctree call when the
-            toctree is empty. Skip building this for now.
-            #}
-            {% if 'singlehtml' not in builder %}
-                {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation, includehidden=True) %}
-            {% endif %}
-            {% if global_toc %}
-                {{ global_toc }}
-            {% else %}
-                <!-- Local TOC -->
-                <div class="local-toc">{{ toc }}</div>
-            {% endif %}
-        {% endblock %}
-    </ul>
-    {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-    <ul class="menu-list">
-        <li>
-            {% block mobile_nav %}
-                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                <a href="{{ pathto(master_doc) }}">{{ project }}</a>
-            {% endblock %}
-        </li>
-    </ul>
-</aside>
+</div>

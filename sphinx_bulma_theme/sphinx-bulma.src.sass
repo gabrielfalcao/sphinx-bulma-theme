@@ -1,98 +1,85 @@
 @charset "utf-8"
 
-$bootstrap: #6f5499
-$github: #333333
-$twitter: #55acee
-$patreon: #f96854
-$patreon-blue: #052d49
-$fortyfour: #5f45bb
-$amazon: #ffd863
-$bleeding-green: #ABF47C
-$bleeding-red: #CA1F26
-$star: #FFD257
-$rss: #f26522
-
-$mauve: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
-
-$carbon-width: 300px
-$carbon-height: 100px
-$main-spacing: 3rem
-$intro-width: 1080px
-$sidebar-width: 14rem
-
+/* Custom Fonts
 @import "mixins"
-
 @include font-face("Lato", "../fonts/Lato-Regular");
 @include font-face("Inconsolata", "../fonts/Inconsolata-Regular");
-/* @include font-face("RobotoSlab", "../fonts/RobotoSlab-Regular");
-/* @include font-face("PT Sans", "../fonts/PT_Sans-Web-Regular");
-/* @include font-face("Anonymous Pro", "../fonts/AnonymousPro-Regular");
-
 
 $body-family: "Lato"
 $code-family: "Inconsolata"
 
+/* Bulma
 @import "../node_modules/bulma/bulma"
 
+
+/* Extend Bulma
+
+/* hide all ¶ characters
 .headerlink
   display: none
 
   &:hover
     display: inline
 
+/* Fix padding for the toctree sidebar wrapper
+#sphinx-bulma-sidebar-toctree
+  padding: 0.8rem 0.4rem
 
-%center
-  align-items: center
-  display: flex
-  justify-content: center
-
-%bd-box
-  background-color: $white
-  border-radius: $radius-large
-  box-shadow: 0 1.5rem 1.5rem -1.25rem rgba($black, 0.05)
-  display: block
-
-=selection($current-selector: false)
-  @if $current-selector
-    &::-moz-selection
-      @content
-    &::selection
-      @content
-  @else
-    \::-moz-selection
-      @content
-    \::selection
-      @content
-
-
-.menu-list
-  line-height: 1
-  padding: 0
-  border: 0
-  li
-    padding: 0
+  /* Adjust sidebar toctree text spacing
+  .menu-list
     line-height: 1
+    padding: 0
     border: 0
 
-    ul
-      border: 0
-      line-height: 1
+    a
+      padding: 0.5rem
+
+    li
       padding: 0
-      margin: 0 0 0 0.5em
-      li
-        line-height: 1
+      line-height: 1.5rem
+      border: 0
+      border-bottom: 1px solid $light
+
+      ul
         border: 0
-        padding: 0
+        line-height: 1rem
+        padding: 0 0 0 0.5em
+        margin: 0
+        li
+          line-height: 1.5rem
+          border: 0
+          padding: 0
+
+    /* Sidebar title positioning and size
+    .menu-label.is-title
+      margin: 0
+      letter-spacing: 0.2em
+      padding: 0
+      font-size: 12px
+      line-height: 0
 
 
+/* Adjust text spacing in toctree page
+.toctree-wrapper
+  ul
+    list-style: none
+    li
+      line-height: 1.5rem
+      ul
+        list-style: none
+        margin-top: 0
+        margin-left: 1rem
+        li
+          line-height: 1.5rem
+
+
+/* Set basic padding for page content
 .sphinx-bulma.column.content
   padding: 0 0.75rem 0.75rem 0.75rem
 
 
+/* Sphinx uses the .section class at will, this is an effort to make
+/* it play nice with Bulma's defaults
 .section:first-child
   padding-top: 0
 
@@ -105,21 +92,44 @@ $code-family: "Inconsolata"
   .section
     padding: 0.5rem 0 3rem 0
 
+.breadcrumb
+  li
+    padding: 0 1rem
+    a
+      padding: 0
+
+/* Fix margin for "See Also", "Note" and any other admonitions
 .admonition
+  a
+    text-decoration: none
+
   margin-top: 22px
-  max-width: 768px
   p.last
     padding: 0 4px
 
+/* Fix margin of snippet blocks
 .code.highlight-default
   pre
     max-height: none
     padding-bottom: 22px
 
-
-.menu-label.is-title
-  margin: 0
-  letter-spacing: 0.2em
+/* Prevent pygments-generated highlighted code to have padding.
+code
   padding: 0
-  font-size: 12px
-  line-height: 0
+
+/* Prevent underline in <code> links
+a
+  code
+    text-decoration: none
+
+/* Stickyness of navigation
+
+.sticky-topbar
+  top: 0px
+  position: -webkit-sticky
+  position: sticky
+
+.sticky-sidebar
+  top: 32px
+  position: -webkit-sticky
+  position: sticky

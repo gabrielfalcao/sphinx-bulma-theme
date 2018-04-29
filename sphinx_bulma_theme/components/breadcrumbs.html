@@ -28,9 +28,9 @@
         {% block breadcrumbs %}
             <li><a href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a></li>
             {% for doc in parents %}
-                <li>&nbsp;<a href="{{ doc.link|e }}">&nbsp;{{ doc.title }}&nbsp;</a>&nbsp;</li>
+                <li>&nbsp;<a href="{{ doc.link|e }}">{{ doc.title }}</a>&nbsp;</li>
             {% endfor %}
-            <li>{{ title }}</li>
+            <li>&nbsp;{{ title }}&nbsp;</li>
         {% endblock %}
     </ul>
     <ul class="column">

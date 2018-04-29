@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = {
     entry: './sphinx_bulma_theme/sphinx-bulma.src.js',
     output: {
-        filename: 'sphinx-bulma.js',
+        filename: 'theme.js',
         path: path.resolve(__dirname, 'sphinx_bulma_theme/static/js/')
     },
     module: {

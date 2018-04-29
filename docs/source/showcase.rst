@@ -1,8 +1,9 @@
 .. _showcase:
 
 
-Show Case
-#########
+Theme Showcase
+##############
+
 
 Admonitions
 ===========

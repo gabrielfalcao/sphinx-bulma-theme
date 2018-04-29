@@ -56,7 +56,7 @@ Configuring
        'prev_next_buttons_location': 'bottom',
        'show_topbar': False,
        'sidebar_class': 'has-text-dark',
-       'sidebar_container_class': 'is-one-fifth',
+       'sidebar_container_class': 'is-one-quarter',
        'sidebar_right': None,
        'theme_sidebar_style': None,
        'topbar_class': 'is-light',
