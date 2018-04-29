@@ -6436,7 +6436,7 @@ label.panel-block {
     display: inline; }
 
 .menu-list {
-  line-height: 0.5;
+  line-height: 0.5em;
   padding: 0;
   border: 0; }
   .menu-list li {

@@ -5,26 +5,39 @@ from __future__ import absolute_import
 Based on https://github.com/rtfd/sphinx_rtd_theme
 
 """
-from docutils.nodes import warning
-from docutils.nodes import tip
-from docutils.nodes import Admonition  # noqa
-from docutils.nodes import Element  # noqa
-from docutils.nodes import compound  # noqa
-from docutils.nodes import title
+from docutils.nodes import Admonition
+from docutils.nodes import attention
+from docutils.nodes import caution
+from docutils.nodes import danger
+from docutils.nodes import error
+from docutils.nodes import hint
+from docutils.nodes import important
 from docutils.nodes import note
-from docutils.nodes import section  # noqa
+from docutils.nodes import tip
+from docutils.nodes import title
+from docutils.nodes import warning
 from sphinx.addnodes import seealso
-from sphinx.addnodes import toctree  # noqa
-from sphinx.addnodes import centered  # noqa
+# from docutils.nodes import Element  # noqa
+# from docutils.nodes import compound  # noqa
+# from docutils.nodes import section  # noqa
+# from sphinx.addnodes import centered  # noqa
+# from sphinx.addnodes import toctree  # noqa
+
 from six import string_types
 from .fs import module_path
 from .version import version
 
 admonition_map = {
-    seealso: 'is-info',
+    seealso: 'is-success',
     tip: 'is-primary',
-    note: 'is-warning',
+    note: 'is-dark',
     warning: 'is-danger',
+    attention: 'is-warning',
+    caution: 'is-warning',
+    danger: 'is-danger',
+    error: 'is-danger',
+    hint: 'is-info',
+    important: 'is-link',
 }
 
 
@@ -68,9 +81,9 @@ def bulmanize_admonition_nodes(app, doctree, fromdocname):
     #         if ad_name in names:
     #             process_admonition_node(node, ad_type, color)
 
-    for Node, message_color in admonition_map.items():
-        for node in doctree.traverse(Node):
-            process_admonition_node(node, Node, message_color, message_size)
+    for node in doctree.traverse(Admonition):
+        message_color = admonition_map.get(node.__class__, 'is-dark')
+        process_admonition_node(node, node.__class__, message_color, message_size)
 
 
 def handle_page_context(app, pagename, templatename, context, doctree):

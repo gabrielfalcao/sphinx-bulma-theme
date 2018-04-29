@@ -1,5 +1,5 @@
 watch:
-	make -C docs livehtml
+	pipenv run make -C docs livehtml
 
 deps:
 	pipenv install --dev --skip-lock
