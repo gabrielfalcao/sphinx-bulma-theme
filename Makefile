@@ -41,4 +41,4 @@ pypi:
 	@pipenv run twine upload dist/*.tar.gz
 
 
-.PHONY: webpack sass
+.PHONY: webpack sass tests
