@@ -14,10 +14,6 @@ def read_version():
     return ctx['version']
 
 
-def read_requirements():
-    return local_file('requirements.txt').splitlines()
-
-
 def read_readme():
     """Read README content.
     If the README.rst file does not exist yet
@@ -36,7 +32,11 @@ setup(
     author_email='gabriel@nacaolivre.org',
     description=read_version(),
     include_package_data=True,
-    install_requires=read_requirements(),
+    install_requires=[
+        "pathlib2>=2.3.2",
+        "Sphinx>=1.7.3"
+        "sphinx-autobuild>=0.7.1",
+    ],
     long_description=read_readme(),
     packages=find_packages(exclude=['*tests*']),
     test_suite='nose.collector',
