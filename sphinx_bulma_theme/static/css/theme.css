@@ -6616,10 +6616,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
   margin: 0; }
 
 .menu-list code {
-  color: #363636; }
-
-.menu-list.dark code {
-  color: whitesmoke; }
+  color: #b86bff; }
 
 /* Fix padding for the toctree sidebar wrapper */
 #sphinx-bulma-sidebar-toctree {
