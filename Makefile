@@ -38,6 +38,7 @@ pypi:
 	@pipenv run python setup.py build sdist
 	@pipenv run twine upload dist/*.tar.gz
 
-docs: html
+docs: sass html
+	open docs/build/html/index.html
 
 .PHONY: webpack sass tests develop docs

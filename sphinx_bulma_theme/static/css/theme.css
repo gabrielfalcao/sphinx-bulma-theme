@@ -6470,6 +6470,17 @@ label.panel-block {
       line-height: 0; }
 
 /* Adjust text spacing in toctree page */
+#indices-and-tables ul {
+  list-style: none; }
+  #indices-and-tables ul li {
+    line-height: 1.5rem; }
+    #indices-and-tables ul li ul {
+      list-style: none;
+      margin-top: 0;
+      margin-left: 1rem; }
+      #indices-and-tables ul li ul li {
+        line-height: 1.5rem; }
+
 .toctree-wrapper ul {
   list-style: none; }
   .toctree-wrapper ul li {
@@ -6498,7 +6509,7 @@ label.panel-block {
     padding: 0.5rem 0 3rem 0; }
 
 .breadcrumb li {
-  padding: 0 1rem; }
+  padding: 0; }
   .breadcrumb li a {
     padding: 0; }
 
@@ -6533,3 +6544,6 @@ a code {
   top: 32px;
   position: -webkit-sticky;
   position: sticky; }
+
+#sphinx-bulma-breadcrumbs-top {
+  margin: 0.5rem 0 0 0; }

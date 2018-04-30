@@ -23,10 +23,10 @@
 {% if check_meta and 'gitlab_url' in meta %}
     {% set display_gitlab = True %}
 {% endif %}
-<nav class="breadcrumb is-centered columns" aria-label="breadcrumbs" style="margin-top:22px">
+<nav id="sphinx-bulma-breadcrumbs-top" class="breadcrumb is-centered columns" aria-label="breadcrumbs">
     <ul class="column">
         {% block breadcrumbs %}
-            <li><a href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a></li>
+      <li>&nbsp;<a href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a>&nbsp;</li>
             {% for doc in parents %}
                 <li>&nbsp;<a href="{{ doc.link|e }}">{{ doc.title }}</a>&nbsp;</li>
             {% endfor %}
@@ -35,48 +35,72 @@
     </ul>
     <ul class="column">
         {% block breadcrumbs_aside %}
-            <li>
-                {% if pagename != "search" %}
-                    {% if display_github %}
+
+            {% if next %}
+                <li>
+                    &nbsp;
+                    <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right"></span></a>
+                    &nbsp;
+                </li>
+            {% endif %}
+            {% if prev %}
+                <li>
+                    &nbsp;
+                    <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> {{ _('Previous') }}</a>
+                    &nbsp;
+                </li>
+            {% endif %}
+
+            {% if pagename != "search" %}
+                {% if display_github %}
+                    <li>
+                        &nbsp;
                         {% if check_meta and 'github_url' in meta %}
                             <!-- User defined GitHub URL -->
                             <a href="{{ meta['github_url'] }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
                         {% else %}
                             <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
                         {% endif %}
-                    {% elif display_bitbucket %}
+                        &nbsp;
+                    </li>
+                {% elif display_bitbucket %}
+                    <li>
+                        &nbsp;
                         {% if check_meta and 'bitbucket_url' in meta %}
                             <!-- User defined Bitbucket URL -->
                             <a href="{{ meta['bitbucket_url'] }}" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
                         {% else %}
                             <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-bitbucket"> {{ _('Edit on Bitbucket') }}</a>
                         {% endif %}
-                    {% elif display_gitlab %}
+                        &nbsp;
+                    </li>
+                {% elif display_gitlab %}
+                    <li>
+                        &nbsp;
                         {% if check_meta and 'gitlab_url' in meta %}
                             <!-- User defined GitLab URL -->
                             <a href="{{ meta['gitlab_url'] }}" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
                         {% else %}
                             <a href="https://{{ gitlab_host|default("gitlab.com") }}/{{ gitlab_user }}/{{ gitlab_repo }}/blob/{{ gitlab_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
                         {% endif %}
-                    {% elif show_source and source_url_prefix %}
+                        &nbsp;
+                    </li>
+                {% elif show_source and source_url_prefix %}
+                    <li>
+                        &nbsp;
                         <a class="has-text-grey" href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
-                    {% elif show_source and has_source and sourcename %}
+                        &nbsp;
+                    </li>
+                {% elif show_source and has_source and sourcename %}
+                    <li>
+                        &nbsp;
                         <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
-                    {% endif %}
+                        &nbsp;
+                    </li>
                 {% endif %}
-            </li>
-        {% endblock %}
+            {% endif %}
 
-    </ul>
-    {% if (theme_prev_next_buttons_location == 'top' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
-        <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-            {% if next %}
-                <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-            {% endif %}
-            {% if prev %}
-                <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-            {% endif %}
-        </div>
-    {% endif %}
-    <hr/>
+        {% endblock %}
+</ul>
+<hr/>
 </nav>

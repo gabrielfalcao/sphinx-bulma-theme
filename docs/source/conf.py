@@ -50,7 +50,7 @@ html_theme_options = {
     'logo_only': False,
     'navigation_depth': 4,
     'prev_next_buttons_location': 'bottom',
-    'show_topbar': False,
+    'show_topbar': True,
     'sidebar_class': 'has-text-dark',
     'sidebar_container_class': 'is-3',
     'sidebar_right': None,

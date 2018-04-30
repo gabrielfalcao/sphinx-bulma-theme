@@ -60,6 +60,19 @@ $code-family: "Inconsolata"
 
 
 /* Adjust text spacing in toctree page
+
+#indices-and-tables
+  ul
+    list-style: none
+    li
+      line-height: 1.5rem
+      ul
+        list-style: none
+        margin-top: 0
+        margin-left: 1rem
+        li
+          line-height: 1.5rem
+
 .toctree-wrapper
   ul
     list-style: none
@@ -94,7 +107,7 @@ $code-family: "Inconsolata"
 
 .breadcrumb
   li
-    padding: 0 1rem
+    padding: 0
     a
       padding: 0
 
@@ -133,3 +146,7 @@ a
   top: 32px
   position: -webkit-sticky
   position: sticky
+
+
+#sphinx-bulma-breadcrumbs-top
+  margin: 0.5rem 0 0 0

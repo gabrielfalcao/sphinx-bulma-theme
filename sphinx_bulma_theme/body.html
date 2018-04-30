@@ -6,9 +6,9 @@
 
 {% if not theme_content_padding_top %}
     {% if not theme_breadcrumbs_at_top and not show_topbar %}
-        {%- set content_padding_top = '32px' %}
+        {%- set content_padding_top = '1rem' %}
     {% else %}
-        {%- set content_padding_top = '0px' %}
+        {%- set content_padding_top = '2rem' %}
     {% endif %}
 {% else %}
     {%- set content_padding_top = theme_content_padding_top %}
@@ -16,9 +16,9 @@
 
 {% if not theme_content_margin_left %}
     {% if theme_sidebar_right %}
-        {%- set content_margin_left = '32px' %}
+        {%- set content_margin_left = '1rem' %}
     {% else %}
-        {%- set content_margin_left = '16px' %}
+        {%- set content_margin_left = '0.5rem' %}
     {% endif %}
 {% else %}
     {%- set content_margin_left = theme_content_margin_left %}
@@ -26,9 +26,9 @@
 
 {% if not theme_content_padding_left %}
     {% if theme_sidebar_right %}
-        {%- set content_padding_left = '32px' %}
+        {%- set content_padding_left = '1rem' %}
     {% else %}
-        {%- set content_padding_left = '16px' %}
+        {%- set content_padding_left = '0.5rem' %}
     {% endif %}
 {% else %}
     {%- set content_padding_left = theme_content_padding_left %}
@@ -93,6 +93,4 @@
    {% endif %}
  });
 </script>
-
-
-{%- block footer %} {% endblock %}
+{% include "components/footer.html" %}
