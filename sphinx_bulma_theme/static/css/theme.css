@@ -6707,6 +6707,10 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
 .message dt {
   font-size: 1rem;
   padding: 0.1rem 0 0 0.8rem; }
+  .message dt a.headerlink {
+    color: whitesmoke; }
+    .message dt a.headerlink:hover {
+      color: #b5b5b5; }
 
 .message ul {
   list-style: none;
