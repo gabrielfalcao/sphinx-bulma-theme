@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
 .menu-list
   code
-    color: $purple
+    color: $link
 
 
 /* Fix padding for the toctree sidebar wrapper
@@ -57,12 +57,14 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
     a
       padding: 0.5rem
+      color: $link
 
     li
       padding: 0
-      line-height: 1.5rem
+      line-height: 2rem
       border: 0
       border-bottom: 1px solid $light
+      font-weight: bold
 
       ul
         border: 0
@@ -70,9 +72,10 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
         padding: 0 0 0 0.5em
         margin: 0
         li
-          line-height: 1.5rem
+          line-height: 2rem
           border: 0
-          padding: 0
+          padding: 0.1rem 0 0 0
+          font-weight: normal
 
     /* Sidebar title positioning and size
     .menu-label.is-title

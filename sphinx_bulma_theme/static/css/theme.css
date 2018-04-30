@@ -6616,7 +6616,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
   margin: 0; }
 
 .menu-list code {
-  color: #b86bff; }
+  color: #3273dc; }
 
 /* Fix padding for the toctree sidebar wrapper */
 #sphinx-bulma-sidebar-toctree {
@@ -6628,21 +6628,24 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
     border: 0;
     /* Sidebar title positioning and size */ }
     #sphinx-bulma-sidebar-toctree .menu-list a {
-      padding: 0.5rem; }
+      padding: 0.5rem;
+      color: #3273dc; }
     #sphinx-bulma-sidebar-toctree .menu-list li {
       padding: 0;
-      line-height: 1.5rem;
+      line-height: 2rem;
       border: 0;
-      border-bottom: 1px solid whitesmoke; }
+      border-bottom: 1px solid whitesmoke;
+      font-weight: bold; }
       #sphinx-bulma-sidebar-toctree .menu-list li ul {
         border: 0;
         line-height: 1rem;
         padding: 0 0 0 0.5em;
         margin: 0; }
         #sphinx-bulma-sidebar-toctree .menu-list li ul li {
-          line-height: 1.5rem;
+          line-height: 2rem;
           border: 0;
-          padding: 0; }
+          padding: 0.1rem 0 0 0;
+          font-weight: normal; }
     #sphinx-bulma-sidebar-toctree .menu-list .menu-label.is-title {
       margin: 0;
       letter-spacing: 0.2em;
