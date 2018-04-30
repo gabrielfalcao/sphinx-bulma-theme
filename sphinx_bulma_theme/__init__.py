@@ -28,7 +28,7 @@ maps :py:class:`docutils.nodes.Admonition` subclasses to `bulma message color cl
 admonition_map = {
     seealso: 'is-success',
     tip: 'is-primary',
-    note: 'is-dark',
+    note: 'is-warning',
     warning: 'is-danger',
     attention: 'is-warning',
     caution: 'is-warning',
@@ -84,9 +84,9 @@ def process_admonition_node(node, admonition_type, color, size):
     for child in node.traverse(title):
         add_classes_to_node('message-header', child)
 
-    for child in node.traverse(admonition_type):
-        add_classes_to_node('message-body', child)
-        break
+    # for child in node.traverse(admonition_type):
+    #     add_classes_to_node('message-body', child)
+    #     break
 
 
 def bulmanize_documentation(app, doctree, fromdocname):

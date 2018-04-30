@@ -6528,13 +6528,18 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
   .breadcrumb li a {
     padding: 0; }
 
+.message dt {
+  font-size: 1.3em;
+  padding: 0.1rem 0 0 0.8rem; }
+
 /* Fix margin for "See Also", "Note" and any other admonitions */
 .admonition {
-  margin-top: 22px; }
+  margin-top: 2rem; }
   .admonition a {
     text-decoration: none; }
-  .admonition p.last {
-    padding: 0 4px; }
+  .admonition .message-body {
+    padding: 0 0 1rem 0;
+    margin: 0 0 0 1rem; }
 
 /* Fix margin of snippet blocks */
 .code.highlight-default pre {
@@ -6562,3 +6567,6 @@ a code {
 
 #sphinx-bulma-breadcrumbs-top {
   margin: 0.5rem 0 0 0; }
+
+.message a:not(.button):not(.tag) {
+  text-decoration: none; }
