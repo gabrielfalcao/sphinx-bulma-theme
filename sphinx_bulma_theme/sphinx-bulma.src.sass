@@ -10,7 +10,19 @@
 $body-family: "Lato"
 $code-family: "Inconsolata"
 
-$code: $link
+$orange:       hsl(14,  100%, 53%)
+$yellow:       hsl(48,  100%, 67%)
+$green:        hsl(141, 71%,  48%)
+$turquoise:    hsl(171, 100%, 41%)
+$cyan:         hsl(204, 86%,  53%)
+$blue:         hsl(217, 71%,  53%)
+$purple:       hsl(271, 100%, 38%)
+$red:          hsl(348, 100%, 61%)
+
+$gold:       hsl(48,  100%, 38%)
+
+
+$code: $gold
 $code-background: transparent
 
 $pre-background: transparent
@@ -23,10 +35,11 @@ $pre-background: transparent
 
 /* hide all ¶ characters
 .headerlink
-  color: $white
+  color: $light
 
   &:hover
-    color: $light
+    color: $grey-light
+
 
 code
   background-color: transparent
@@ -63,7 +76,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
       ul
         border: 0
         line-height: 1rem
-        padding: 0 0 0 0.5em
+        padding: 0 0 0 0.5rem
         margin: 0
         li
           line-height: 2rem
@@ -74,9 +87,9 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
     /* Sidebar title positioning and size
     .menu-label.is-title
       margin: 0
-      letter-spacing: 0.2em
+      letter-spacing: 0.2rem
       padding: 0
-      font-size: 12px
+      font-size: 1rem
       line-height: 0
 
 
@@ -146,7 +159,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
 .message
   dt
-    font-size: 1.3em
+    font-size: 1rem
     padding: 0.1rem 0 0 0.8rem
   ul
     list-style: none
@@ -206,6 +219,10 @@ a
 
 .message a:not(.button):not(.tag)
   text-decoration: none
+  &.headerlink
+    color: $light
+    &:hover
+      color: $grey-light
 
 
 #sphinx-bulma-sidebar-project-info
