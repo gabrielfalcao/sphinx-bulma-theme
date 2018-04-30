@@ -5,7 +5,7 @@ try:
 except ImportError:
     from pathlib import Path
 
-project_path = Path(__file__).absolute().parent.joinpath('../..')
+project_path = Path(__file__).absolute().parent.joinpath('../../..')
 
 sys.path.insert(0, project_path.as_posix())
 
@@ -41,7 +41,7 @@ extensions = [
 html_theme = "bulma"
 html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
 html_theme_options = {
-    'show_topbar': True,
+    'show_topbar': False,
     'logo_path': 'logo.png',
     'analytics_id': None,
     'breadcrumbs_at_top': True,
