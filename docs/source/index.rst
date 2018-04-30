@@ -7,10 +7,9 @@ Sphinx Bulma Theme
    introduction
    writing
    options
-   api
    showcase
    extending
-
+   api
 
 
 Indices and tables

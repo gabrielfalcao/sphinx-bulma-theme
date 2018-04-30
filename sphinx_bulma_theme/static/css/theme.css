@@ -6437,6 +6437,21 @@ label.panel-block {
   .headerlink:hover {
     display: inline; }
 
+code {
+  background-color: transparent; }
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-wrapper code {
+  background-color: transparent;
+  color: #209cee;
+  padding: 0;
+  margin: 0; }
+
+.menu-list code {
+  color: #363636; }
+
+.menu-list.dark code {
+  color: whitesmoke; }
+
 /* Fix padding for the toctree sidebar wrapper */
 #sphinx-bulma-sidebar-toctree {
   padding: 0.8rem 0.4rem;

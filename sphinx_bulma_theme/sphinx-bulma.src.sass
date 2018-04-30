@@ -21,6 +21,28 @@ $code-family: "Inconsolata"
   &:hover
     display: inline
 
+
+code
+  background-color: transparent
+
+h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
+  code
+    background-color: transparent
+    color: $info
+    padding: 0
+    margin: 0
+
+
+.menu-list
+  code
+    color: $dark
+
+
+.menu-list.dark
+  code
+    color: $light
+
+
 /* Fix padding for the toctree sidebar wrapper
 #sphinx-bulma-sidebar-toctree
   padding: 0.8rem 0.4rem
