@@ -3,6 +3,7 @@
 sphinxcontrib-mermaid
 =====================
 
+`extension docs <https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/>`_
 
 .. mermaid::
 

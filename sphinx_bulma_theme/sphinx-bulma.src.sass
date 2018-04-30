@@ -1,5 +1,7 @@
 @charset "utf-8"
 
+@import "../node_modules/bulma/sass/utilities/_all"
+
 /* Custom Fonts
 @import "mixins"
 @include font-face("Lato", "../fonts/Lato-Regular");
@@ -7,6 +9,11 @@
 
 $body-family: "Lato"
 $code-family: "Inconsolata"
+
+$code: $dark
+$code-background: transparent
+
+$pre-background: transparent
 
 /* Bulma
 @import "../node_modules/bulma/bulma"
@@ -153,7 +160,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
 /* Fix margin for "See Also", "Note" and any other admonitions
 .admonition
-  margin-top: 2rem
+  margin: 2rem
 
   a
     text-decoration: none
@@ -215,3 +222,7 @@ a
       padding: 0
       margin: 0 0 1rem 0
       line-height: 2rem
+table
+  &.field-list
+    tr
+      margin: 1rem 0

@@ -1,9 +1,10 @@
 .. _httpdomain:
 
 
-sphinxcontrib-httpdomain
-========================
+httpdomain
+==========
 
+`extension docs <https://sphinxcontrib-httpdomain.readthedocs.io/>`_
 
 .. http:get:: /users/(int:user_id)/posts/(tag)
 

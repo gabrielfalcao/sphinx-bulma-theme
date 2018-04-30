@@ -80,17 +80,17 @@
 {% endif %}
 <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 <script type="text/javascript">
- jQuery(function () {
-   jQuery(".admonition-title").addClass('message-header');
-   jQuery(".admonition > .last").addClass('message-body');
-   {% if theme_sticky_navigation and theme_sticky_js %}
-   var sidebar = new StickySidebar('#sphinx-bulma-sidebar', {
-     topSpacing: 32,
-     bottomSpacing: 32,
-     containerSelector: '.sphinx-bulma-theme-main',
-     innerWrapperSelector: '.sphinx-bulma-sidebar-inner'
-   });
-   {% endif %}
- });
+    jQuery(function () {
+    jQuery(".admonition-title").addClass('message-header');
+    jQuery(".admonition > .last").addClass('message-body');
+    {% if theme_sticky_navigation and theme_sticky_js %}
+        var sidebar = new StickySidebar('#sphinx-bulma-sidebar', {
+        topSpacing: 32,
+        bottomSpacing: 32,
+        containerSelector: '.sphinx-bulma-theme-main',
+        innerWrapperSelector: '.sphinx-bulma-sidebar-inner'
+        });
+    {% endif %}
+    });
 </script>
 {% include "components/footer.html" %}
