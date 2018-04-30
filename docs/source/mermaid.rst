@@ -1,7 +1,7 @@
 .. _mermaid:
 
-sphinxcontrib-mermaid
-=====================
+mermaid
+=======
 
 `extension docs <https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/>`_
 

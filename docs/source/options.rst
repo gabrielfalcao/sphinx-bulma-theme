@@ -1,7 +1,7 @@
 .. _html theme options:
 
-Theme Options
-=============
+Config Options
+==============
 
 
 
@@ -23,6 +23,13 @@ Theme Options
 
    - **type:** :py:class:`bool`
    - **default:** ``False``
+
+.. _option breadcrumbs_class:
+
+.. py:data:: breadcrumbs_class
+
+   - **type:** :py:class:`str`
+   - **default:** ``is-centered``
 
 .. _option canonical_url:
 

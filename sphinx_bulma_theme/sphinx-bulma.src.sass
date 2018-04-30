@@ -10,7 +10,7 @@
 $body-family: "Lato"
 $code-family: "Inconsolata"
 
-$code: $dark
+$code: $link
 $code-background: transparent
 
 $pre-background: transparent
@@ -23,11 +23,10 @@ $pre-background: transparent
 
 /* hide all ¶ characters
 .headerlink
-  display: none
+  color: $white
 
   &:hover
-    display: inline
-
+    color: $light
 
 code
   background-color: transparent
@@ -35,14 +34,9 @@ code
 h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
   code
     background-color: transparent
-    color: $info
+    color: $code
     padding: 0
     margin: 0
-
-
-.menu-list
-  code
-    color: $link
 
 
 /* Fix padding for the toctree sidebar wrapper
@@ -51,7 +45,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
   /* Adjust sidebar toctree text spacing
   .menu-list
-    line-height: 1
+    line-height: 1rem
     padding: 0
     border: 0
 
@@ -105,6 +99,7 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
     list-style: none
     li
       line-height: 1.5rem
+      margin-top: 1rem
       ul
         list-style: none
         margin-top: 0
@@ -125,6 +120,9 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 
       &.field-name, &.field-body
         border-bottom: 0
+
+    td
+      padding: 0 0 0 1rem
 
 /* Sphinx uses the .section class at will, this is an effort to make
 /* it play nice with Bulma's defaults

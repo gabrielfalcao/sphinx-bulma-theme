@@ -7,4 +7,5 @@ Extension Support
    :maxdepth: 2
 
    httpdomain
+   jsonschema
    mermaid

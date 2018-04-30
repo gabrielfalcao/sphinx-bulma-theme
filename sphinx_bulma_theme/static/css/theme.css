@@ -467,7 +467,7 @@ a {
 
 code {
   background-color: transparent;
-  color: #363636;
+  color: #3273dc;
   font-size: 0.875em;
   font-weight: normal;
   padding: 0.25em 0.5em 0.25em; }
@@ -6602,28 +6602,25 @@ label.panel-block {
 /* Extend Bulma */
 /* hide all ¶ characters */
 .headerlink {
-  display: none; }
+  color: white; }
   .headerlink:hover {
-    display: inline; }
+    color: whitesmoke; }
 
 code {
   background-color: transparent; }
 
 h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-wrapper code {
   background-color: transparent;
-  color: #209cee;
+  color: #3273dc;
   padding: 0;
   margin: 0; }
-
-.menu-list code {
-  color: #3273dc; }
 
 /* Fix padding for the toctree sidebar wrapper */
 #sphinx-bulma-sidebar-toctree {
   padding: 0.8rem 0.4rem;
   /* Adjust sidebar toctree text spacing */ }
   #sphinx-bulma-sidebar-toctree .menu-list {
-    line-height: 1;
+    line-height: 1rem;
     padding: 0;
     border: 0;
     /* Sidebar title positioning and size */ }
@@ -6668,7 +6665,8 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
 .toctree-wrapper ul {
   list-style: none; }
   .toctree-wrapper ul li {
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    margin-top: 1rem; }
     .toctree-wrapper ul li ul {
       list-style: none;
       margin-top: 0;
@@ -6686,6 +6684,8 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
       list-style: none; }
     .sphinx-bulma.column.content table th.field-name, .sphinx-bulma.column.content table th.field-body, .sphinx-bulma.column.content table td.field-name, .sphinx-bulma.column.content table td.field-body {
       border-bottom: 0; }
+  .sphinx-bulma.column.content table td {
+    padding: 0 0 0 1rem; }
 
 /* Sphinx uses the .section class at will, this is an effort to make */
 /* it play nice with Bulma's defaults */

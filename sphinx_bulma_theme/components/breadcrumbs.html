@@ -23,7 +23,7 @@
 {% if check_meta and 'gitlab_url' in meta %}
     {% set display_gitlab = True %}
 {% endif %}
-<nav id="sphinx-bulma-breadcrumbs-top" class="breadcrumb is-right columns" aria-label="breadcrumbs">
+<nav id="sphinx-bulma-breadcrumbs-top" class="breadcrumb {{ theme_breadcrumbs_class }} columns" aria-label="breadcrumbs">
     <ul class="column">
         {% block breadcrumbs %}
       <li>&nbsp;<a href="{{ pathto(master_doc) }}">{{ _('Docs') }}</a>&nbsp;</li>

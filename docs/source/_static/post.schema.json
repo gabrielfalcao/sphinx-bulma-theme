@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "post_id": {
+            "type": "integer"
+        },
+        "author_id": {
+            "type": "integer"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "subject": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "author_id",
+        "post_id",
+        "subject",
+        "tags"
+    ]
+}
