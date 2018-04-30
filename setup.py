@@ -7,6 +7,11 @@ from setuptools import setup, find_packages
 
 local_file = lambda *f: open(os.path.join(os.path.dirname(__file__), *f)).read()
 
+DEPENDENCIES = [
+    "pathlib2>=2.3.2",
+    "Sphinx>=1.7.3"
+]
+
 
 def read_version():
     ctx = {}
@@ -32,11 +37,7 @@ setup(
     author_email='gabriel@nacaolivre.org',
     description=read_version(),
     include_package_data=True,
-    install_requires=[
-        "pathlib2>=2.3.2",
-        "Sphinx>=1.7.3"
-        "sphinx-autobuild>=0.7.1",
-    ],
+    install_requires=DEPENDENCIES,
     long_description=read_readme(),
     packages=find_packages(exclude=['*tests*']),
     test_suite='nose.collector',
