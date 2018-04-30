@@ -15,6 +15,10 @@ package-lock.json node_modules node_modules/bulma node_modules/bulma/bulma.sass:
 webpack:
 	npm run build
 
+unit functional:
+	@echo -n "running $@ tests... "
+	@echo "OK"
+
 sass:
 	@node-sass --include-path scss sphinx_bulma_theme/sphinx-bulma.src.sass sphinx_bulma_theme/static/css/theme.css
 
@@ -25,9 +29,7 @@ html: develop
 	@rm -rf docs/build/$@
 	@pipenv run make -C docs $@
 
-tests:
-	@echo -n "running tests... "
-	@echo "OK"
+tests: unit functional
 
 release: sass develop html tests
 	@rm -rf dist/*
