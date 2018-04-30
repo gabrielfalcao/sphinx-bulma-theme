@@ -13,8 +13,8 @@ import sphinx_bulma_theme  # noqa
 
 
 project = 'Sphinx Bulma Theme'
-copyright = '2018, Gabriel Falcão'
-author = 'Gabriel Falcão'
+copyright = '2018, Gabriel Falcao'
+author = 'Gabriel Falcao'
 
 version = sphinx_bulma_theme.version
 release = version
