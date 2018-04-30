@@ -13,6 +13,8 @@ A Sphinx theme based on the `RTD theme <https://github.com/rtfd/sphinx_rtd_theme
    :target: https://pypi.python.org/pypi/sphinx-bulma-theme
 .. image:: https://badges.gitter.im/gabrielfalcao/sphinx-bulma-theme.svg
    :target: https://gitter.im/gabrielfalcao/sphinx-bulma-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+.. image:: https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg
+   :target: https://saythanks.io/to/gabrielfalcao
 
 Motivation
 ----------
