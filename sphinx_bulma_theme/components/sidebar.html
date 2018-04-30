@@ -9,7 +9,7 @@
         {% set menu_style = theme_sidebar_style %}
     {% endif %}
     {% if not theme_show_topbar %}
-    <aside id="sphinx-bulma-sidebar-project-info" class="box menu" style="{{ menu_style }}">
+        <aside id="sphinx-bulma-sidebar-project-info" class="box menu" style="{{ menu_style }}">
             <div class="sphinx-bulma-sidebar-inner">
                 <ul class="menu-list">
                     {% if theme_logo_path %}
@@ -29,6 +29,8 @@
                                 {% endif %}
                                 {% if nav_version %}
                                     {{ nav_version }}
+                                {% elif version %}
+                                    {{ version }}
                                 {% endif %}
                             {% endif %}
                         </a>
@@ -45,7 +47,7 @@
         </aside>
     {% endif %}
 
-        <aside id="sphinx-bulma-sidebar-toctree" class="box menu" style="{{ menu_style }}">
+    <aside id="sphinx-bulma-sidebar-toctree" class="box menu" style="{{ menu_style }}">
 
 
         <ul class="menu-list">

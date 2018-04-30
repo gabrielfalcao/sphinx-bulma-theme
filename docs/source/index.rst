@@ -8,6 +8,7 @@ Sphinx Bulma Theme
    writing
    options
    showcase
+   extensions
    extending
    api
 

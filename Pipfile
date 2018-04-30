@@ -22,6 +22,10 @@ mock = "*"
 twine = "*"
 coverage = "*"
 ipdb = "*"
+sphinxcontrib-httpdomain = "*"
+sphinx-jsonschema = "*"
+sphinxcontrib-mermaid = "*"
+sphinxcontrib-websupport = "*"
 
 
 [requires]

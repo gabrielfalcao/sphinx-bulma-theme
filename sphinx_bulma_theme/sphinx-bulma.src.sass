@@ -111,7 +111,15 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
 /* Set basic padding for page content
 .sphinx-bulma.column.content
   padding: 0 0.75rem 0.75rem 0.75rem
+  table
+    th, td
+      padding: 0
+      margin: 0
+      ul, li
+        list-style: none
 
+      &.field-name, &.field-body
+        border-bottom: 0
 
 /* Sphinx uses the .section class at will, this is an effort to make
 /* it play nice with Bulma's defaults
@@ -119,13 +127,13 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
   padding-top: 0
 
 .section
-  padding: 1.5rem 0
+  padding: 0.5rem 0
 
   .section:first-child
     padding-top: 0
 
   .section
-    padding: 0.5rem 0 3rem 0
+    padding: 0.5rem 0 1rem 0
 
 .breadcrumb
   li
@@ -137,6 +145,11 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
   dt
     font-size: 1.3em
     padding: 0.1rem 0 0 0.8rem
+  ul
+    list-style: none
+    margin: 0
+    li
+      list-style: none
 
 /* Fix margin for "See Also", "Note" and any other admonitions
 .admonition
@@ -145,9 +158,16 @@ h1, h2, h3, h4, h5, h6, .menu-list, .toctree-wrapper
   a
     text-decoration: none
 
+  ul
+    list-style: none
+    li
+      list-style: none
+
   .message-body
     padding: 0 0 1rem 0
     margin: 0 0 0 1rem
+    code
+      background-color: transparent
 
 /* Fix margin of snippet blocks
 .code.highlight-default
@@ -183,3 +203,15 @@ a
 
 .message a:not(.button):not(.tag)
   text-decoration: none
+
+
+#sphinx-bulma-sidebar-project-info
+  .is-title
+    font-size: 2rem
+    padding: 0
+    margin: 0
+    text-align: center
+    a
+      padding: 0
+      margin: 0 0 1rem 0
+      line-height: 2rem

@@ -6510,6 +6510,13 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
 /* Set basic padding for page content */
 .sphinx-bulma.column.content {
   padding: 0 0.75rem 0.75rem 0.75rem; }
+  .sphinx-bulma.column.content table th, .sphinx-bulma.column.content table td {
+    padding: 0;
+    margin: 0; }
+    .sphinx-bulma.column.content table th ul, .sphinx-bulma.column.content table th li, .sphinx-bulma.column.content table td ul, .sphinx-bulma.column.content table td li {
+      list-style: none; }
+    .sphinx-bulma.column.content table th.field-name, .sphinx-bulma.column.content table th.field-body, .sphinx-bulma.column.content table td.field-name, .sphinx-bulma.column.content table td.field-body {
+      border-bottom: 0; }
 
 /* Sphinx uses the .section class at will, this is an effort to make */
 /* it play nice with Bulma's defaults */
@@ -6517,11 +6524,11 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
   padding-top: 0; }
 
 .section {
-  padding: 1.5rem 0; }
+  padding: 0.5rem 0; }
   .section .section:first-child {
     padding-top: 0; }
   .section .section {
-    padding: 0.5rem 0 3rem 0; }
+    padding: 0.5rem 0 1rem 0; }
 
 .breadcrumb li {
   padding: 0; }
@@ -6532,14 +6539,26 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, .menu-list code, .toctree-
   font-size: 1.3em;
   padding: 0.1rem 0 0 0.8rem; }
 
+.message ul {
+  list-style: none;
+  margin: 0; }
+  .message ul li {
+    list-style: none; }
+
 /* Fix margin for "See Also", "Note" and any other admonitions */
 .admonition {
   margin-top: 2rem; }
   .admonition a {
     text-decoration: none; }
+  .admonition ul {
+    list-style: none; }
+    .admonition ul li {
+      list-style: none; }
   .admonition .message-body {
     padding: 0 0 1rem 0;
     margin: 0 0 0 1rem; }
+    .admonition .message-body code {
+      background-color: transparent; }
 
 /* Fix margin of snippet blocks */
 .code.highlight-default pre {
@@ -6570,3 +6589,13 @@ a code {
 
 .message a:not(.button):not(.tag) {
   text-decoration: none; }
+
+#sphinx-bulma-sidebar-project-info .is-title {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+  #sphinx-bulma-sidebar-project-info .is-title a {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    line-height: 2rem; }

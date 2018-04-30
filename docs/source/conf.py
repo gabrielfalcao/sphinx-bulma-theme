@@ -34,10 +34,14 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.httpdomain',
+    'sphinxcontrib.mermaid',
+    'sphinx-jsonschema',
 ]
 html_theme = "bulma"
 html_theme_path = [sphinx_bulma_theme.get_html_theme_path()]
 html_theme_options = {
+    'show_topbar': False,
     'logo_path': 'logo.png',
     'analytics_id': None,
     'breadcrumbs_at_top': True,
@@ -50,7 +54,6 @@ html_theme_options = {
     'logo_only': False,
     'navigation_depth': 4,
     'prev_next_buttons_location': 'bottom',
-    'show_topbar': True,
     'sidebar_class': 'has-text-dark',
     'sidebar_container_class': 'is-3',
     'sidebar_right': None,
